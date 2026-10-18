@@ -1,0 +1,41 @@
+# TaskTracker
+
+Aplicação de linha de comando (CLI) em Python 3 para cadastrar e visualizar tarefas.
+Projeto da **Fase 2 (Entrega Intermediária)** do Bootcamp II.
+
+## Descrição funcional
+
+O programa exibe um menu contínuo com três opções:
+
+1. **Cadastrar nova tarefa**
+2. **Visualizar tarefas cadastradas**
+3. **Sair da aplicação**
+
+Cada tarefa possui:
+
+| Campo | Regra |
+|---|---|
+| Título | Obrigatório. Entradas vazias ou só com espaços são rejeitadas e o prompt se repete. |
+| Descrição | Texto livre. |
+| Prioridade | Aceita apenas `Alta`, `Média` (ou `Media`) e `Baixa`. Outros valores geram erro e repetição do prompt. |
+| Data limite | Formato livre ou DD/MM/AAAA. |
+| Status | Definido automaticamente como `Pendente`. |
+
+Se não houver tarefas, a listagem informa que não existem registros.
+
+## Tecnologias
+
+- Python 3.8+
+- Git e GitHub
+
+## Estrutura do repositório
+
+```
+tasktracker-projeto/
+├── README.md
+├── .gitignore
+├── docs/
+│   └── planejamento_logico.pdf
+└── src/
+    └── main.py
+```

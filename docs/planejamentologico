@@ -1,0 +1,125 @@
+# PLANEJAMENTO LÓGICO TASKTRACKER
+## Etapa Inicial – Bootcamp II
+
+**Aluna:** Maria Rita Verçosa Gramosa  
+**Curso:** Engenharia de Software  
+**Data:** 13/09/2026
+
+---
+
+## 1. Apresentação e Entendimento do Problema
+
+### 1.1 Identificação do Aluno
+
+- **Aluna:** Maria Rita Verçosa Gramosa
+- **Curso:** Engenharia de Software
+- **RA:** 22553710
+- **E-mail:** maria.gramosa@sempreceub.com
+
+### 1.2 Problema que o TaskTracker Pretende Resolver
+
+No meu dia a dia, é bem comum as tarefas se acumularem e eu acabar perdendo o controle do que já fiz e do que ainda falta fazer. Sem um jeito organizado de acompanhar isso, é fácil esquecer prazos ou deixar coisas importantes de lado. Foi pensando nisso que surgiu a ideia do TaskTracker.
+
+### 1.3 Solução Proposta
+
+A ideia é que o TaskTracker seja um sistema simples para cadastrar e acompanhar tarefas. O usuário vai poder registrar o título, a descrição, a prioridade e a data limite de cada uma, além de ver em que status ela está. Assim, fica mais fácil ter uma visão geral do que precisa ser feito e do que já foi concluído.
+
+---
+
+## 2. Decomposição do Problema e Dados do Sistema
+
+### 2.1 Entradas do Sistema
+
+Para que uma tarefa seja cadastrada no TaskTracker, o sistema deverá receber do usuário as seguintes informações:
+
+- **Título:** nome curto e identificador da tarefa.
+- **Descrição:** detalhamento do que precisa ser feito.
+- **Prioridade:** nível de importância da tarefa (Alta, Média ou Baixa).
+- **Data limite:** prazo estabelecido para a conclusão da tarefa.
+
+### 2.2 Saídas do Sistema
+
+- **Lista de tarefas:** conjunto de todas as tarefas cadastradas.
+- **Informações da tarefa:** título, descrição, prioridade e data limite exibidos ao usuário.
+- **Status da tarefa:** indicação da situação atual de cada tarefa (Pendente, Em Andamento ou Concluída).
+- **Confirmação:** mensagem informando que uma ação, como o cadastro de uma tarefa, foi realizada com sucesso.
+- **Tarefas concluídas:** listagem específica das tarefas que já foram finalizadas.
+
+### 2.3 Regras de Negócio
+
+Para orientar o funcionamento do sistema, foram definidas as seguintes regras:
+
+1. Não é possível cadastrar uma tarefa sem título.
+2. A prioridade deve ser uma entre três opções: Alta, Média ou Baixa.
+3. Toda nova tarefa é cadastrada automaticamente com o status Pendente.
+4. O status só é alterado por uma ação do próprio usuário (para Em Andamento ou Concluída).
+5. Toda tarefa deve ter uma data limite, para que seja possível acompanhar os prazos.
+
+---
+
+## 3. Receita Lógica do Sistema (Algoritmo)
+
+Nesta seção, descrevo, em linguagem natural e sem uso de código, como o TaskTracker deverá funcionar — desde o momento em que uma tarefa é cadastrada até a sua visualização pelo usuário.
+
+### 3.1 Passo a Passo do Cadastro de uma Tarefa
+
+Inicialmente, o usuário solicita o cadastro de uma nova tarefa. O sistema então solicita as informações necessárias: título, descrição, prioridade e data limite. Após o preenchimento dos dados, o sistema os recebe e inicia o processo de validação.
+
+### 3.2 Validação dos Dados
+
+Depois de receber os dados, o sistema verifica se o título foi preenchido. Caso esteja vazio, o cadastro não será realizado e o usuário deverá informar um título.
+
+Em seguida, o sistema verifica se a prioridade escolhida é válida: Alta, Média ou Baixa. Também será verificado se a data limite foi informada.
+
+Se as informações estiverem corretas, a tarefa poderá ser cadastrada.
+
+### 3.3 Definição do Status
+
+Ao cadastrar uma nova tarefa, seu status será definido como “Pendente”. Depois, o usuário poderá alterar esse status para “Em Andamento” ou “Concluída”.
+
+### 3.4 Armazenamento
+
+Após a validação, a tarefa será adicionada à lista de tarefas cadastradas. Ao final, o sistema informará que o cadastro foi realizado com sucesso.
+
+### 3.5 Passo a Passo da Visualização das Tarefas
+
+Quando o usuário solicita a visualização das tarefas, o sistema consulta todas as que estão armazenadas e organiza as informações — título, descrição, prioridade, data limite e status — para exibição. Assim, é possível identificar rapidamente quais tarefas estão pendentes, em andamento ou concluídas. Caso o usuário deseje ver apenas as já finalizadas, o sistema também permite filtrar e apresentar somente as tarefas concluídas.
+
+---
+
+## 4. Mapeamento Arquitetural (Git/GitHub)
+
+A estrutura planejada para o repositório é a seguinte:
+
+```text
+tasktracker-projeto/
+├── README.md
+├── .gitignore
+├── docs/
+│   └── planejamento_logico.pdf
+└── src/
+    └── main.py
+```
+
+### Finalidade dos Arquivos e Diretórios
+
+| Item | Descrição |
+|---|---|
+| `tasktracker-projeto/` | Pasta raiz do repositório, que reúne todos os arquivos e diretórios do projeto. |
+| `README.md` | Arquivo de apresentação do projeto, contendo informações gerais sobre o TaskTracker, como objetivo e forma de utilização. |
+| `.gitignore` | Arquivo que define quais arquivos e pastas não devem ser enviados ao repositório remoto pelo Git. |
+| `docs/` | Diretório destinado à documentação do projeto. |
+| `docs/planejamento_logico.pdf` | Documento com o planejamento lógico do sistema, correspondente a esta etapa inicial do trabalho. |
+| `src/` | Diretório destinado ao código-fonte do sistema. |
+| `src/main.py` | Arquivo principal onde o programa do TaskTracker será desenvolvido nas próximas etapas. |
+
+### 4.2 Plano de Aprendizado de Git/GitHub
+
+Na próxima fase, quero aprender melhor a utilizar o Git e o GitHub durante o desenvolvimento do projeto. Pretendo praticar a criação de commits, o envio das alterações para o GitHub e o uso de branches. Também quero entender como resolver conflitos e acompanhar as versões do projeto. Com isso, espero ganhar mais prática com ferramentas que são utilizadas no desenvolvimento de software.
+
+---
+
+## 5. Links
+
+- **Vídeo:** https://youtu.be/6gb5OG4eonA
+- **Documento original:** https://docs.google.com/document/d/1PBfmRk6TaoFpqQH5771bf80GyadRE_WshQq1gfKD17E/edit?usp=sharing

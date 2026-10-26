@@ -1,7 +1,7 @@
 # TaskTracker
 
 Aplicação de linha de comando (CLI) em Python 3 para cadastrar e visualizar tarefas.
-Projeto da **Fase 2 (Entrega Intermediária)** do Bootcamp II.
+Projeto do **Bootcamp II**: Fase 2 (implementação em Python) e Fase 3 (conteinerização com Docker).
 
 ## Descrição funcional
 
@@ -21,21 +21,62 @@ Cada tarefa possui:
 | Data limite | Formato livre ou DD/MM/AAAA. |
 | Status | Definido automaticamente como `Pendente`. |
 
-Se não houver tarefas, a listagem informa que não existem registros.
-
-## Tecnologias
-
-- Python 3.8+
-- Git e GitHub
+Se não houver tarefas, a listagem informa que não existem registros. As tarefas ficam apenas em memória durante a execução.
 
 ## Estrutura do repositório
 
 ```
 tasktracker-projeto/
-├── README.md
 ├── .gitignore
 ├── docs/
 │   └── planejamento_logico.pdf
-└── src/
-    └── main.py
+├── src/
+│   └── main.py
+├── Dockerfile
+├── docker-compose.yml
+└── README.md
 ```
+
+## Executando com Docker
+
+Pré-requisito: [Docker](https://docs.docker.com/get-docker/) instalado e em execução.
+
+**Como construir a imagem:**
+
+```bash
+docker build -t tasktracker .
+```
+
+**Como rodar o container em modo isolado:**
+
+```bash
+docker run -it --rm tasktracker
+```
+
+**Como rodar via orquestração (Recomendado):**
+
+```bash
+docker compose run --rm tasktracker-app
+```
+
+O `-it` (e, no Compose, `stdin_open: true` e `tty: true`) mantém a entrada aberta e aloca um terminal,
+necessários porque a aplicação usa `input()`. Para encerrar, escolha a opção **3** do menu.
+
+### O que cada arquivo faz
+
+- **Dockerfile:** empacota a aplicação usando `python:3.11-slim`, define `/app` como pasta de trabalho, ativa `PYTHONUNBUFFERED=1` (logs imediatos), copia `src/` e executa `python src/main.py`.
+- **docker-compose.yml:** descreve a execução interativa do serviço `tasktracker-app`.
+
+## Executando sem Docker
+
+```bash
+git clone https://github.com/mariagramosa/tasktracker.git
+cd tasktracker
+python3 src/main.py
+```
+
+Não há dependências externas.
+
+## Autor
+
+Maria Rita Verçosa Gramosa
